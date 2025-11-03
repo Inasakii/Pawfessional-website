@@ -1,0 +1,258 @@
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+/* HEADER */
+.main-menu {
+  width: 100%;
+  height: 95px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.img-box {
+  transform: translate(10px, 5px);
+}
+
+.top-left {
+  display: flex;
+  margin: 0 0 6px 15px;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-grow: 1;
+}
+
+.main-menu i.fa-solid.fa-bars::before {
+  display: none;
+}
+
+/* Title */
+.title-box {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+h1.title {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Baloo 2", sans-serif;
+}
+
+h1 span {
+  font-family: "Baloo 2", sans-serif;
+  color: #E9590F;
+}
+
+h4.subtext {
+  font-size: 17.5px;
+  font-weight: bold;
+  font-family: "Baloo 2", sans-serif;
+  line-height: 1;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* NAVIGATION */
+.nav-menu {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+}
+.nav-list li a {
+  position: relative;
+  color: #000;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  transition: color 0.3s ease;
+}
+/* Underline hover effect */
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease-in-out;
+}
+/* Main Contents */
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
+/* FOOTER */
+footer {
+  background: #333;
+  color: white;
+  padding: 10px 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Footer brand */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+}
+h1.bottom-title {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Baloo 2", sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+h1.bottom-title span {
+  color: #E9590F;
+}
+
+/* Footer container */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Footer boxes */
+.footer-box {
+  flex: 1 1 200px;
+  min-width: 200px;
+  height: 250px;
+  padding: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+.footer-box h3 {
+  margin-bottom: 35px;
+}
+.footer-box .link-groups a i{
+  font-size: 1.7rem; /* Adjust size as needed */
+}
+.footer-box .link-groups a i:hover{
+  opacity: 0.9;
+}
+.footer-box h3{
+  margin-bottom: 35px;
+}
+p.footer-email{
+  text-align: center;
+}
+
+/* Footer links */
+.footer-link {
+  position: relative;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+.footer-box .link-groups a i{
+  font-size: 1.7rem; /* Adjust size as needed */
+}
+.footer-box .link-groups a i:hover{
+  opacity: 0.9;
+}
+.footer-link:hover {
+  color: #4299e1;;
+}
+.footer-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #4299e1;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+.footer-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Terms Designs */
+.policy-container p {
+  text-align: justify;
+}
+
+.policy-container a {
+  color: #2563eb;
+  text-decoration: underline;
+  transition: color 0.2s ease-in;
+}
+
+.policy-container a:hover {
+  color: #1e40af;
+}
+/* Back Button Design  */
+.btn-box{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back-button {
+    top: 20px;
+    left: 20px;
+    background-color: #E9590F;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.back-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Smooth fade in on scroll (optional) */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate__fadeInUp {
+  animation: fadeInUp 0.7s ease-in-out;
+}
+
+/* Footer content */
+.section-line {
+  border: 1px solid #888;
+  margin: 20px 0;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.8rem;
+}
+.divider {
+  color: #888;
+}

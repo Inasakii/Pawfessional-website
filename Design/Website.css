@@ -1,0 +1,976 @@
+/* === GLOBAL RESETS & DEFAULTS === */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+    overflow-x: hidden;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* === HEADER & NAVIGATION === */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    min-height: 95px; /* Added min-height for consistent header size */
+}
+
+.main-menu {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 95px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.img-box img {
+    width: 80px;
+    height: 80px;
+    transition: filter 0.4s ease;
+}
+
+.title-box {
+    display: flex;
+    flex-direction: column;
+}
+
+h1.title {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    transition: color 0.4s ease;
+}
+
+h1.title span {
+    font-family: "Baloo 2", sans-serif;
+    color: #E9590F;
+}
+
+h4.subtext {
+    font-weight: bold;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 17.5px;
+    white-space: nowrap;
+    line-height: 1.2;
+    color: #555;
+    transition: color 0.4s ease;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-list li a {
+    color: #000;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    transition: color 0.4s ease;
+}
+
+.nav-list li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease-in-out, background-color 0.4s ease;
+}
+
+.nav-list li a:hover::after {
+    width: 100%;
+}
+
+.desktop-header-actions {
+    display: flex; /* Only visible on desktop */
+}
+
+.header-action-button { /* Consolidated styles for desktop download button */
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 1px solid #E9590F;
+    background: #E9590F;
+    color: #fff;
+    font: 700 0.9rem 'Montserrat', sans-serif;
+    transition: all .3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transform: scale(1); /* Ensure default state */
+}
+
+.header-action-button:hover {
+    background: #fff;
+    color: #E9590F;
+    transform: scale(1.05);
+}
+
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #333;
+    transition: color 0.4s ease;
+}
+
+/* Sticky Header Styles */
+header.sticky {
+    background-color: #E9590F;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid transparent;
+}
+header.sticky .title,
+header.sticky .subtext,
+header.sticky .nav-list li a,
+header.sticky .hamburger-menu {
+    color: white;
+}
+header.sticky .img-box img {
+    filter: brightness(0) invert(1);
+}
+header.sticky .nav-list li a::after {
+    background-color: white;
+}
+header.sticky .mobile-only-download .mobile-download-link {
+    color: white; /* Ensure mobile download link is white when sticky */
+}
+header.sticky .mobile-only-download .mobile-download-link i {
+    color: white; /* Ensure mobile download link icon is white when sticky */
+}
+
+/* === HERO SECTION === */
+.upper-page {
+    width: 100%;
+    min-height: 550px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 5%;
+    position: relative;
+    overflow: hidden;
+}
+.hero-background-shape {
+    position: absolute;
+    top: -150px;
+    right: -200px;
+    width: 900px;
+    height: 900px;
+    background: linear-gradient(135deg, #F28C38, #E9590F);
+    border-radius: 50%;
+    transform: rotate(25deg);
+    z-index: 1;
+}
+.hero-content {
+    z-index: 2;
+    position: relative;
+}
+p.banner {
+    font-weight: 600;
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #333;
+    line-height: 1.2;
+    max-width: 500px;
+}
+p.sub-banner {
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    margin-top: 10px;
+    color: #333;
+}
+.hero-images {
+    z-index: 2;
+    position: relative;
+    width: 450px;
+    height: 400px;
+}
+.hero-cat {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 300px;
+    transform: rotate(15deg);
+}
+.hero-dog {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+}
+
+/* === "WHAT WE DO" SECTION === */
+.middle-container {
+  padding: 6rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.middle-img-wrapper {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.middle-img-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Orange background now relative and flexible */
+.middle-content-wrapper {
+  position: relative;
+  flex: 1 1 450px;
+  max-width: 600px;
+}
+
+.middle-content-bg {
+  position: absolute;
+  inset: 0;
+  background: #E9590F;
+  border-radius: 20px;
+  z-index: -1;
+  transform: translate(1rem, 1rem); /* Creates that "offset shadow" look */
+}
+
+.middle-content {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+              rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.middle-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.middle-label {
+  line-height: 1.7;
+  color: #555;
+}
+
+/* === "PRIMARY CARE" SECTION === */
+.mid-card {
+    padding: 4rem 5%;
+}
+.widget-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.wg-textbox {
+    flex: 1 1 400px;
+}
+h1.wg-title {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+p.wg-label {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #555;
+}
+.wg-link {
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: 2px solid #E9590F;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #E9590F;
+    transition: all 0.3s ease;
+}
+.wg-link:hover {
+    background: #E9590F;
+    color: #fff;
+}
+.wg-handler {
+    overflow: hidden;
+    border-radius: 20px;
+    flex: 1 1 500px;
+}
+img.wg-picture {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
+}
+img.wg-picture:hover {
+    transform: scale(1.05);
+}
+
+/* === MAP & EVENTS SECTION SHARED === */
+.map-section, .events-section, .download-section {
+    padding: 4rem 5%;
+}
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-header h1, .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: "Fredoka", sans-serif;
+    color: #333;
+}
+.section-header h4, .section-header p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+.orange-header {
+    background: linear-gradient(135deg, #F28C38, #E9590F);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+}
+.orange-header h2, .orange-header p {
+    color: white;
+}
+
+/* Map Section */
+.map-container {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Events Section */
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.sub-section {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+.sub-section h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #E9590F;
+}
+.event-item {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+.event-item:last-child {
+    border-bottom: none;
+}
+.event-title { font-weight: bold; color: #E9590F; font-size: 1.1rem; margin-bottom: 5px; }
+.event-date { color: #666; font-size: 0.9rem; margin-bottom: 5px; }
+.event-description { color: #555; font-size: 0.95rem; }
+.empty-state {
+    text-align: center;
+    color: #888;
+    padding: 2rem;
+    font-style: italic;
+}
+
+/* Download Section */
+.download-section {
+    background-image: url('../Design/Image/bg2.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    width: 100%;
+    min-height: 400px; /* Changed height to min-height for flexibility */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Needed for pseudo-element overlay */
+    overflow: hidden;
+    padding: 4rem 5%; /* Ensure consistent padding */
+}
+
+/* Overlay for text readability */
+.download-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Darker transparent overlay for better contrast */
+    z-index: 0;
+}
+
+/* Ensure content is above the overlay */
+.download-section h4, .download-section p, .download-section .ds-box {
+    position: relative;
+    z-index: 1;
+}
+
+.ds-label {
+    color: white; /* Changed to white for better contrast */
+    font-size: clamp(1.5rem, 6vw, 2.3rem); /* Responsive font size */
+    font-family: 'Montserrat', sans-serif;
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto; /* Adjusted margin-bottom */
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+.download-description { /* New class for the paragraph */
+    color: #f3f4f6; /* Very light gray for good contrast */
+    font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
+    margin-bottom: 2.5rem; /* Adjusted margin-bottom */
+    padding: 0 20px;
+}
+
+.gradient-button {
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, orange, #E9590F, #333);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.gradient-button:hover {
+    background-position: right center;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 4rem 0 2rem 0;
+}
+span.footer-title{
+    font-family: "Baloo 2", sans-serif;
+    color: #E9590F;
+}
+.footer-container {
+    width: 100%;
+    padding: 0 5%; /* Adjusted padding for better responsiveness */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.footer-brand {
+    flex: 2 1 300px;
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center horizontally */
+}
+h1.bottom-title {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+#logo-footer {
+    width: 60px;
+    height: 60px;
+}
+.footer-email, .footer-label, .footer-link {
+    color: #d1d5db;
+    transition: color 0.3s ease;
+}
+p.footer-email{
+    text-align: center;
+}
+.footer-link:hover {
+    color: #E9590F;
+}
+.footer-box {
+    flex: 1 1 180px;
+}
+.footer-box h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+.footer-box ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+.social-media {
+    flex-direction: row;
+    gap: 1.5rem;
+}
+.social-media a i {
+    margin-left: 5px;
+    font-size: 1.7rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.social-media a:hover i {
+    color: #E9590F;
+}
+.section-line {
+    border-top: 1px solid #4b5563;
+    margin: 2rem auto;
+    width: 100%;
+}
+.footer-bottom {
+    width: 100%;
+    padding: 0 5%; /* Adjusted padding for better responsiveness */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #9ca3af;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.footer-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* === UTILITIES === */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #E9590F;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+.floating-btn:hover {
+    background: #d4500c;
+    transform: translateY(-3px);
+}
+
+/* === RESPONSIVENESS === */
+@media (max-width: 1200px) {
+  .middle-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .middle-content-wrapper {
+    max-width: 90%;
+  }
+  .middle-content-bg {
+    transform: translate(0.5rem, 0.5rem);
+  }
+}
+
+
+@media (max-width: 992px) {
+    .hero-images { display: none; }
+    .upper-page { justify-content: center; text-align: center; }
+    .middle-container { 
+        flex-direction: column; 
+        gap: 2rem; 
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .middle-content-wrapper { margin-left: 0; }
+    .middle-content-bg { display: none; }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .main-menu {
+        width: 95%; /* Adjust width for smaller screens */
+        padding: 0 10px;
+        height: auto; /* Allow height to adjust based on content */
+        min-height: 70px; /* Ensure minimum height for header on mobile */
+    }
+    
+    .header-brand {
+        gap: 5px;
+    }
+    img#logo{
+        width: 45px;
+        height: 45px;
+    }
+    h1.title{
+        font-size: 24px;
+    }
+    h4.subtext{
+        font-size: 12px; /* Adjusted slightly smaller than 16px to fit better */
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+    .desktop-header-actions { /* Target the container, not just the button */
+        display: none; 
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu on mobile */
+    }
+
+    .nav-menu {
+        display: none; /* Hidden by default, toggled by JS */
+        position: absolute;
+        top: 70px; /* Adjusted to match new mobile header height */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        z-index: 99; /* Ensure it's above other content but below sticky header */
+    }
+    .nav-menu.nav-active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 0; /* Remove gap for vertical list */
+    }
+    .nav-list li a {
+        color: white;
+        padding: 1rem 0;
+        display: block;
+        width: 100%;
+    }
+    .nav-list li a:hover {
+        background-color: #444;
+    }
+    .nav-list li a::after {
+        display: none; /* Hide underline effect on mobile */
+    }
+
+    .mobile-download-link {
+        color: white; /* White text for better contrast on dark menu */
+        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
+        display: flex; /* Display on mobile */
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 1rem 0;
+        background-color: #4a4a4a; /* A subtle background to make it stand out */
+        border-radius: 8px;
+        margin: 1rem; /* Adjust margin for mobile button */
+        transition: background-color 0.3s ease;
+    }
+
+    .mobile-download-link:hover {
+        background-color: #555;
+        color: white;
+    }
+
+    .mobile-download-link i {
+        color: var(--primary-color); /* Icon color */
+        transition: color 0.3s ease;
+    }
+    .mobile-download-link:hover i {
+        color: white;
+    }
+
+    /* Hero section adjustments for mobile */
+    .upper-page {
+        min-height: 600px; /* Adjust height for mobile */
+    }
+    .hero-background-shape {
+        height: 600px; /* Adjust height for mobile */
+        transform: translateY(40%); /* Adjust position */
+    }
+    .hero-content {
+        top: 30%; /* Adjust position for mobile */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        text-align: center;
+    }
+    p.banner{
+        color: #fff;
+        font-size: clamp(2rem, 8vw, 3rem); /* Adjust font size for smaller screens */
+    }
+    p.sub-banner{
+        color: #fff;
+        font-size: clamp(1rem, 4vw, 1.5rem); /* Adjust font size for smaller screens */
+    }
+    .hero-cat {
+        width: 120px; /* Adjust size */
+        height: auto;
+        bottom: 0px;
+        left: 0%; /* More to the edge */
+        transform: translateX(0%) translateY(10%);
+    }
+    .hero-dog {
+        width: 200px; /* Adjust size */
+        height: auto;
+        bottom: 0px;
+        right: 0%; /* More to the edge */
+        transform: translateX(0%) translateY(10%);
+    }
+
+    /* Middle section adjustments */
+    .middle-container{
+        flex-direction: column;
+        height: auto;
+    }
+    .middle-img-wrapper, .middle-content-wrapper {
+        flex: none;
+        width: 100%;
+    }
+    .middle-img-wrapper {
+        height: 250px;
+    }
+    .middle-content-bg {
+        transform: none; /* Remove skew for mobile */
+        padding: 40px 20px;
+        background-color: var(--primary-color); /* Solid color for mobile */
+    }
+    .middle-content {
+        padding-left: 0;
+        text-align: center;
+    }
+    .middle-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    .middle-label {
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    }
+
+
+    /* Mid card section adjustments */
+    .widget-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .wg-textbox {
+        align-items: center;
+        padding: 30px 20px;
+    }
+    .wg-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    .wg-label {
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    }
+    .wg-link {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .wg-handler { /* Corrected selector */
+        display: block;
+        min-height: 200px; /* Adjust height */
+    }
+    .wg-picture {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Map section adjustments */
+    .map-section {
+        padding: 40px 5%;
+    }
+    .section-header h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    .section-header h4 {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+    .map-container {
+        padding-bottom: 75%; /* More square aspect ratio for mobile */
+    }
+
+
+    /* Events section adjustments */
+    .events-section {
+        padding: 40px 5%;
+    }
+    .events-section .section-header.orange-header h2 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    .events-section .section-header.orange-header p {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        margin-bottom: 30px;
+    }
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .sub-section {
+        padding: 20px;
+    }
+    .sub-section h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+    .event-item {
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+    .event-title {
+        font-size: 18px;
+    }
+    .event-date, .event-description {
+        font-size: 13px;
+    }
+    .empty-state {
+        padding: 20px 0;
+        font-size: 14px;
+    }
+
+
+    /* Download section adjustments */
+    .download-section {
+        padding: 3rem 5%; /* Adjust padding for mobile */
+    }
+    .ds-label {
+        font-size: clamp(1.8rem, 8vw, 2.5rem); /* Smaller font size for mobile */
+        margin-bottom: 1rem;
+    }
+    .download-description {
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+        margin-bottom: 1.5rem;
+    }
+    .gradient-button {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+
+
+    /* Footer adjustments */
+    footer {
+        padding: 40px 5% 15px;
+    }
+    .footer-container, .footer-bottom {
+        text-align: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-brand, .footer-box {
+        align-items: center;
+        flex-basis: 100%;
+        min-width: unset;
+    }
+    .bottom-title {
+        font-size: 28px;
+    }
+    #logo-footer {
+        width: 35px;
+        height: 35px;
+    }
+    .footer-email, .footer-link, .footer-label {
+        font-size: 13px;
+    }
+    .section-line {
+        margin: 20px auto;
+    }
+    .copyright {
+        order: 2; /* Move copyright below links on mobile */
+    }
+    .footer-links {
+        order: 1;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,712 @@
+/* General reset and base styles */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Montserrat", sans-serif; /* A more consistent font */
+    background-color: #f5f7fb; /* Tailwind gray-50 equivalent */
+    color: #333;
+}
+/* === Header === */
+header {
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #fff;
+    position: absolute; /* changed from sticky */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* ensures it's on top of all content */
+}
+
+
+.main-menu {
+    max-width: 1200px; /* Limit width on larger screens */
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-box {
+    /* Removed transform, adjust margin if needed */
+}
+
+#logo {
+    width: 60px; /* Smaller logo by default */
+    height: 60px;
+}
+
+.title-box {
+    /* Adjusted width to allow wrapping on smaller screens */
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack title and subtext */
+    align-items: flex-start;
+    justify-content: center;
+}
+
+h1.title {
+    font-weight: 700;
+    font-family: "Baloo 2", sans-serif;
+    cursor: default;
+    font-size: 28px; /* Smaller font size for mobile-first */
+    line-height: 1.2;
+}
+
+h1.title span {
+    font-family: "Baloo 2", sans-serif;
+    color: #E9590F;
+    cursor: default;
+}
+
+h4.subtext {
+    font-weight: bold;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 14px; /* Smaller font size for mobile-first */
+    cursor: default;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    white-space: normal; /* Allow subtext to wrap */
+}
+
+/* --- Desktop Navigation Menu --- */
+.desktop-nav {
+    display: none; /* Hidden by default on mobile */
+}
+
+.desktop-nav ul {
+    padding: 0; /* Remove padding from ul */
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Reduced gap for smaller screens */
+}
+
+.nav-list li a {
+    position: relative;
+    color: #000000;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 5px 0; /* Add padding for click area */
+    font-size: 15px; /* Adjust font size */
+}
+
+.nav-list li a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px; /* Adjusted distance */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-list li a:hover::after {
+    width: 100%;
+}
+
+/* --- Hamburger Menu --- */
+.hamburger-menu {
+    display: block; /* Shown by default on mobile */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    padding: 5px;
+}
+
+/* --- Mobile Navigation --- */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 2000;
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.mobile-nav.active {
+    transform: translateX(0); /* Slide in */
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.mobile-nav-header .title {
+    font-size: 28px;
+    margin: 0;
+}
+
+.mobile-nav-header .title span {
+    color: #E9590F;
+}
+
+.close-mobile-nav {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+    padding: 5px;
+}
+
+.mobile-nav-list {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+}
+
+.mobile-nav-list li a {
+    display: block;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 500;
+}
+
+.mobile-nav-list li:last-child a {
+    border-bottom: none;
+}
+
+/* --- Middle Section --- */
+.mid-section {
+    width: 100%;
+    /* height: 575px; Removed fixed height */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    justify-content: center; /* Center items for mobile */
+    gap: 20px; /* Add gap between items */
+}
+
+#services-title {
+    width: 100%; /* Full width for title */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem; /* Adjust for mobile */
+}
+
+.mid-container {
+    width: 100%; /* Full width on mobile */
+    height: 200px; /* Reduced height for mobile */
+    border: 2px solid #E9590F; /* Use primary color for border */
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../Assets/Images/bgcover.png');
+}
+
+.mid-card {
+    width: 100%; /* Full width on mobile */
+    padding: 20px;
+    background-color: #fff; /* Card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+.mid-sub-title {
+    font-weight: 600;
+    font-size: 1.5rem; /* Adjusted for mobile */
+    font-family: "Baloo 2", sans-serif;
+    color: #2D3748;
+    margin-bottom: 10px;
+}
+
+.mid-label {
+    font-size: 0.95rem;
+    color: #4A5568;
+    line-height: 1.6;
+}
+
+/* --- More Services Cards Section --- */
+.divider-line {
+    border-top: 1px solid #e0e0e0;
+    margin: 40px auto;
+    width: 90%;
+}
+
+.section-box {
+    margin-top: 30px;
+    padding: 20px 15px; /* Adjusted padding for mobile */
+    text-align: center; /* Center title */
+}
+
+.section-title {
+    font-size: 2rem; /* Adjusted for mobile */
+    color: #2B2B2B;
+    font-family: "Baloo 2", sans-serif;
+    font-weight: bold;
+}
+
+.card-section {
+    width: 100%;
+    padding: 15px; /* Adjusted padding for mobile */
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.card-handler {
+    display: grid;
+    /* Default to single column on small screens, then adjust */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Allow cards to be slightly smaller */
+    gap: 1.5rem; /* Adjusted gap */
+    justify-items: center;
+}
+
+.card {
+    width: 100%; /* Max width for cards inside grid items */
+    max-width: 300px; /* Max width for individual cards */
+    height: auto;
+    border-radius: 20px;
+    background: #fff;
+    position: relative;
+    padding: 0;
+    border: 2px solid #e0e0e0; /* Neutral border color by default */
+    transition: 0.3s ease-out; /* Faster transition */
+    overflow: hidden; /* Ensure content stays within border radius */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+    animation: fadeInUp 0.5s ease-out; /* Smoother animation */
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+    will-change: opacity, transform, filter;
+}
+
+.card-header img {
+    width: 100%;
+    height: 150px; /* Slightly reduced height for images */
+    object-fit: cover; /* Ensure images cover the area */
+    border-radius: 18px 18px 0 0; /* Only top corners rounded */
+}
+
+.card-details {
+    color: #333;
+    min-height: 120px; /* Ensure consistent card height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align text to top */
+    padding: 15px;
+    text-align: center;
+    gap: 0.5em;
+}
+
+.text-title {
+    font-size: 1.3rem; /* Adjusted for mobile */
+    font-weight: bold;
+    color: #2D3748;
+    margin-bottom: 5px;
+}
+
+.text-body {
+    color: #555;
+    line-height: 1.4rem;
+    font-size: 0.9rem;
+}
+
+.card-button {
+    display: block; /* Make button take full width of its container */
+    width: calc(100% - 30px); /* Adjust width to account for padding */
+    margin: 0 15px 15px 15px; /* Centered with bottom margin */
+    padding: 10px 1rem;
+    border-radius: 8px; /* Slightly smaller radius */
+    background-color: #E9590F;
+    color: #fff;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: 0.3s ease-out;
+    transform: none; /* Remove transform property for consistent positioning */
+    opacity: 1; /* Always visible on mobile */
+    position: static; /* Remove absolute positioning */
+}
+
+.card-button:hover {
+    background-color: #cf480c;
+}
+
+.card:hover {
+    border-color: #E9590F;
+    box-shadow: 0 4px 18px 0 rgba(233, 89, 15, 0.35);
+}
+/* No special hover effect for .card-button on .card:hover as it's always visible */
+
+
+/* --- Lower Section --- */
+.lower-section {
+    width: 100%;
+    /* height: 400px; Removed fixed height */
+    padding: 60px 20px; /* Added padding */
+    background: #E9590F; /* Changed to single primary color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.l-section-handler {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Reduced gap */
+    max-width: 700px;
+}
+
+h1.lower-section-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.5rem; /* Adjusted for mobile */
+    line-height: 1.2;
+}
+
+h5.lower-section-label {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.3rem; /* Adjusted for mobile */
+    line-height: 1.4;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2.5rem 0 1.5rem 0; /* Adjusted padding */
+}
+
+.footer-container {
+    max-width: 1200px; /* Limit width */
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack vertically by default */
+    gap: 2rem;
+}
+
+.footer-brand {
+    text-align: center;
+}
+
+.bottom-title {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 32px; /* Adjusted for mobile */
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+#logo-footer {
+    width: 50px; /* Smaller logo */
+    height: 50px;
+    margin-right: 10px;
+}
+
+.footer-email, .footer-label, .footer-link {
+    color: #d1d5db;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-email {
+    text-align: center;
+}
+
+.footer-box {
+    text-align: center; /* Center content in footer boxes */
+}
+
+.footer-box h3 {
+    font-size: 1.15rem; /* Adjusted for mobile */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-box ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.social-media {
+    flex-direction: row;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.social-media a i {
+    font-size: 1.5rem; /* Adjusted for mobile */
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.section-line {
+    border-top: 1px solid #4b5563;
+    margin: 1.5rem auto;
+    width: calc(100% - 40px); /* Adjust width */
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack vertically by default */
+    align-items: center;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    gap: 0.8rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links .divider {
+    display: none; /* Hide divider on small screens */
+}
+
+
+/* ===== Scrollbar Styling for Whole Page ===== */
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ff7b00;
+    border-radius: 10px;
+    border: 2px solid #f1f1f1;
+    transition: background 0.3s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #e56f00;
+}
+
+
+/* ========================================================= */
+/*                   MEDIA QUERIES - DESKTOP FIRST           */
+/* ========================================================= */
+
+/* Tablet and larger screens (e.g., >= 768px) */
+@media (min-width: 768px) {
+    #logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    h1.title {
+        font-size: 36px;
+    }
+
+    h4.subtext {
+        font-size: 17.5px;
+    }
+
+    .header-brand {
+        gap: 15px;
+    }
+
+    /* Desktop nav visible, hamburger hidden */
+    .desktop-nav {
+        display: flex;
+    }
+    .hamburger-menu {
+        display: none;
+    }
+
+    /* Adjust desktop nav gap */
+    .desktop-nav ul {
+        gap: 30px;
+    }
+
+    .nav-list li a {
+        font-size: 16px;
+    }
+
+    /* Hide mobile nav */
+    .mobile-nav {
+        transform: translateX(100%);
+    }
+
+    .mid-section {
+        justify-content: space-evenly;
+    }
+
+    #services-title {
+        font-size: 3rem;
+    }
+
+    .mid-container {
+        height: 250px;
+    }
+
+    .mid-card {
+        width: 47.5%; /* Restore original width */
+    }
+
+    .mid-sub-title {
+        font-size: 1.8rem;
+    }
+
+    .section-box {
+        padding: 20px 0 20px 5rem; /* Restore original padding */
+        text-align: left; /* Align title left */
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .card-handler {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allow wider cards */
+        gap: 2rem;
+    }
+
+    .card {
+        width: 290px; /* Restore fixed width for consistent sizing */
+    }
+
+    .card-details {
+        min-height: 120px; /* Keep consistent height */
+    }
+
+    /* Restore card button hover effect */
+    .card-button {
+        transform: translate(-50%, 125%);
+        width: 50%;
+        position: absolute; /* Re-enable absolute positioning */
+        left: 50%;
+        bottom: 0;
+        opacity: 0;
+    }
+
+    .card:hover .card-button {
+        transform: translate(-50%, 50%);
+        opacity: 1;
+    }
+
+    h1.lower-section-title {
+        font-size: 42px;
+    }
+
+    h5.lower-section-label {
+        font-size: 28px;
+    }
+
+    .footer-container {
+        flex-direction: row; /* Layout horizontally */
+        justify-content: space-between;
+    }
+
+    .footer-brand {
+        text-align: left;
+        flex: 2 1 300px;
+    }
+
+    .bottom-title {
+        font-size: 36px;
+        justify-content: flex-start;
+    }
+
+    #logo-footer {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer-email {
+        text-align: left;
+    }
+
+    .footer-box {
+        text-align: left;
+        flex: 1 1 180px;
+    }
+
+    .social-media {
+        justify-content: flex-start;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .footer-links .divider {
+        display: inline; /* Show divider on larger screens */
+    }
+}
+
+/* Small mobile devices (e.g., < 480px) if further reduction needed */
+@media (max-width: 480px) {
+    h1.title {
+        font-size: 24px;
+    }
+    h4.subtext {
+        font-size: 12px;
+    }
+    #services-title {
+        font-size: 2rem;
+    }
+    .mid-sub-title {
+        font-size: 1.3rem;
+    }
+    .mid-label {
+        font-size: 0.85rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .text-title {
+        font-size: 1.2rem;
+    }
+    .text-body {
+        font-size: 0.85rem;
+    }
+    h1.lower-section-title {
+        font-size: 2rem;
+    }
+    h5.lower-section-label {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../fontawesome-free-7.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="/Design/Services.css">
+    <style>
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(-60px);
+            filter: blur(6px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+    }
+    </style>
+</head>
+    <body class="bg-gray-50">
+        <header>
+            <div class="main-menu">
+                <div class="header-brand">
+                    <a href="../index.html" class="img-box">
+                        <img id="logo" src="../Assets/Images/PawLogo.png" width="80" height="80">
+                    </a>
+                    <div class="title-box">
+                        <h1 class="title" >
+                            <span>Paw</span>fessional
+                        </h1>
+                        <h4 class="subtext">Veterinary Clinic and Grooming Center</h4>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <nav class="nav-menu desktop-nav">
+                        <ul class="nav-list">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../About.html">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="../Products.html">Products</a></li>
+                        </ul>
+                    </nav>
+                    <button class="hamburger-menu" id="hamburger-menu" aria-label="Open navigation menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Navigation Menu -->
+            <nav class="mobile-nav" id="mobile-nav">
+                <div class="mobile-nav-header">
+                    <h1 class="title"><span>Paw</span>fessional</h1>
+                    <button class="close-mobile-nav" aria-label="Close navigation menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <ul class="mobile-nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../About.html">About</a></li>
+                    <li><a href="../Services.html">Services</a></li>
+                    <li><a href="../Products.html">Products</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Middle Section -->
+         <div class="mid-section">
+            <p id="services-title" class="section-title">Veterinary Clinic Services</p>
+            <div class="mid-container"></div>
+              
+            <div class="mid-card">
+                 <h2 class="mid-sub-title">Who is it for?</h2>
+                 <p class="mid-label">Pawfessional is designed for every pet owner who wants the best care for their furry companions. Whether you’re a first-time pet parent or have years of experience, our services cater to dogs, cats, and other small animals in need of check-ups, grooming, vaccination, or treatment. We’re here to make your pet’s health journey easy, reliable, and stress-free because they deserve nothing less than professional love and care.</p>
+            </div>
+            <div class="mid-card">
+                 <h2 class="mid-sub-title">How much it cost?</h2>
+                 <p class="mid-label">Our pricing depends on the service your pet needs from general consultations and vaccinations to grooming and wellness packages. We make sure our rates remain affordable without compromising quality care. You can view a detailed list of our services and prices at the reception or on your Pawfessional account. Transparency, comfort, and compassion come first always for you and your pet.</p>
+            </div>
+         </div>
+
+        <!-- This is the Services Cards -->
+            <div class="divider-line"></div>
+                <div class="section-box">
+                    <p class="section-title">More Services</p>
+                </div>
+            <div class="card-section">
+                <div class="card-handler">
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="../Assets/Images/consultation.jpg" width="100%" height="80">
+                        </div>
+                        <div class="card-details">
+                            <p class="text-title">Consultation</p>
+                            <p class="text-body">Consultation is a short appointment where veterinarians checks your pet’s health, discusses any concerns, and provides advice.</p>
+                        </div>
+                        <a href="../Services/consult.html" class="card-button">More Info</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="../Assets/Images/vaccination.png" width="100%" height="80">
+                        </div>
+                        <div class="card-details">
+                            <p class="text-title">Vaccinations</p>
+                            <p class="text-body">Vaccinations are an important part of pet healthcare. They help protect pets from contagious diseases that can be harmful.</p>
+                        </div>
+                        <a href="../Services/vacci.html" class="card-button">More Info</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="../Assets/Images/deworming.png" width="100%" height="80">
+                        </div>
+                        <div class="card-details">
+                            <p class="text-title">Deworming</p>
+                            <p class="text-body">Deworming is a preventive and therapeutic procedure performed in veterinary clinics to remove internal parasites. </p>
+                        </div>
+                        <a href="../Services/Deworm.html" class="card-button">More Info</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="../Assets/Images/bloodtest.png" width="100%" height="80">
+                        </div>
+                        <div class="card-details">
+                            <p class="text-title">Bloodtest</p>
+                            <p class="text-body">A blood test is a procedure to a small sample of a pet’s blood is taken checking overall health, detect diseases, and guide treatment.</p>
+                        </div>
+                        <a href="../Services/bloodtest.html" class="card-button">More Info</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="../Assets/Images/ultrasound.png" width="100%" height="80">
+                        </div>
+                        <div class="card-details">
+                            <p class="text-title">Ultrasound</p>
+                            <p class="text-body">A safe and painless imaging test used to check your pet’s internal organs and diagnose health conditions.</p>
+                        </div>
+                        <a href="../Services/ultra.html" class="card-button">More Info</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="../Assets/Images/confinement.png" width="100%" height="80">
+                        </div>
+                        <div class="card-details">
+                            <p class="text-title">Confinement</p>
+                            <p class="text-body">A secure area where pets are kept for observation, recovery, or isolation when needed for their health.</p>
+                        </div>
+                        <a href="../Services/confine.html" class="card-button">More Info</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="../Assets/Images/surgery.jpg" width="100%" height="80">
+                        </div>
+                        <div class="card-details">
+                            <p class="text-title">Surgery</p>
+                            <p class="text-body">Medical procedures performed by veterinarians to treat injuries, remove growths, or improve your pet’s health.</p>
+                        </div>
+                        <a href="../Services/surgery.html" class="card-button">More Info</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="../Assets/Images/homeSer.png" width="100%" height="80">
+                        </div>
+                        <div class="card-details">
+                            <p class="text-title">Home Service</p>
+                            <p class="text-body">Convenient veterinary care or grooming right at your doorstep — stress-free for both you and your pet.</p>
+                        </div>
+                        <a href="../Services/homeser.html" class="card-button">More Info</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="../Assets/Images/grooms.png" width="100%" height="80">
+                        </div>
+                        <div class="card-details">
+                            <p class="text-title">Pet Grooming</p>
+                            <p class="text-body">Keep your furry friends clean, stylish, and healthy with our gentle and professional grooming services.</p>
+                        </div>
+                        <a href="../Services/groom.html" class="card-button">More Info</a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="../Assets/Images/petboard.jpeg" width="100%" height="80">
+                        </div>
+                        <div class="card-details">
+                            <p class="text-title">Pet Boarding</p>
+                            <p class="text-body">A safe, cozy, and caring place for your pets while you’re away — just like their second home.</p>
+                        </div>
+                        <a href="../Services/boarding.html" class="card-button">More Info</a>
+                    </div>
+                </div>
+            </div>
+        <!-- Middle-Lower Section -->
+        <div class="middle-lower-section">
+
+            
+        </div>
+        <!-- Lower Section -->
+        <div class="lower-section">
+            <div class="l-section-handler">
+                <h1 class="lower-section-title">
+                    Ready to Give Your Pet the Best Care?
+                </h1>
+                <h5 class="lower-section-label">
+                    Schedule an appointment today and experience our comprehensive veterinary services.
+                </h5>
+            </div>
+        </div>
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <h1 class="bottom-title">
+                        <img id="logo-footer" src="/Assets/Images/PawLogo.png" alt="Pawfessional Logo">
+                        <span class="footer-title">Paw</span>fessional
+                    </h1>
+                    <p class="footer-email">Direct Message in our official page: https://www.facebook.com/pawfessionalvetclinic </p>
+                </div>
+                <div class="footer-box">
+                    <h3>Quick Links</h3>
+                    <div class="link-groups">
+                        <ul>
+                            <li><a href="/Main/Services.html" class="footer-link">Services</a></li>
+                            <li><a href="../Products.html" class="footer-link">Products</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Contacts</h3>
+                    <div class="link-groups">
+                        <ul>
+                            <li class="footer-label">Call: 0965 071 3308</li>
+                            <li class="footer-label">Text: 0965 071 3308</li>
+                            <li class="footer-label">Norika Building, San Jose, Rodriguez, Rizal</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Community</h3>
+                    <div class="link-groups">
+                        <ul>
+                            <li><a href="../About.html" class="footer-link">About Us</a></li>
+                            <li><a href="../Developers.html" class="footer-link">Developers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Social Media</h3>
+                    <div class="link-groups social-media">
+                        <a href="https://www.facebook.com/pawfessionalvetclinic" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                    </div>
+                </div>   
+            </div>
+            <div class="section-line"></div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 Pawfessional. All Rights Reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="../Terms.html" class="footer-link">Terms & Conditions</a>
+                    <span class="divider">|</span>
+                    <a href="../Privacy.html" class="footer-link">Privacy Policy</a>
+                </div>
+            </div>
+        </footer>
+        <script src="../Script/mobileNav.js"></script>
+    </body>
+</html>

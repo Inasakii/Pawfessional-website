@@ -1,0 +1,323 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    .main-menu {
+        width: auto;
+        height: 95px;
+
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+    }
+
+    .img-box {
+        transform: translate(10px, 5px);
+    }
+
+    .top-left {
+        width: auto;
+        margin: 0 0 6px 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .top-right {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        transition: all 0.3s ease;
+        flex-grow: 1;
+    }
+
+    .main-menu i.fa-solid.fa-bars::before {
+        display: none;
+    }
+
+    .title-box {
+        width: 300px;
+        padding: 0;
+        margin-right: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    h1 span {
+        font-family: "Baloo 2", sans-serif;
+        color: #E9590F;
+        cursor: default;
+    }
+
+    h1.title {
+        font-weight: 700;
+        font-family: "Baloo 2", sans-serif;
+        cursor: default;
+        font-size: 36px;
+    }
+
+    h4.subtext {
+        font-weight: bold;
+        font-family: "Baloo 2", sans-serif;
+        font-size: 17.5px;
+        cursor: default;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    /* === Navigation Menu === */
+    .nav-menu {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu ul {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* Default link style */
+    .nav-list li a {
+        position: relative; /* Needed for ::after underline */
+        color: #000000;
+        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
+        cursor: pointer;
+        transition: color 0.3s ease; /* Smooth text color change */
+    }
+
+    /* Underline effect */
+    .nav-list li a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px; /* Distance of underline from text */
+        left: 0;
+        width: 0; /* Starts hidden */
+        height: 2px;
+        background-color: black; /* Default underline color */
+        transition: width 0.3s ease-in-out;
+    }
+
+    /* Show underline on hover */
+    .nav-list li a:hover::after {
+        width: 100%;
+    }
+}
+  /* Start Designing Here */
+  .mid-section{
+    width: 100%;
+    height: 700px;
+    
+  }
+  .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+  }
+  .back-to-top:hover {
+      background-color: #0056b3;
+  }
+  /* Developer Cards Styles (from your original code) */
+  .developers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+  }
+  .developer-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .developer-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  .developer-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: #ddd;
+  }
+  .developer-info {
+      padding: 20px;
+  }
+  .developer-name {
+      font-size: 1.5em;
+      margin: 0;
+      color: #E9590F;
+  }
+  .developer-role {
+      font-size: 1em;
+      color: #777;
+      margin: 5px 0;
+  }
+  .developer-bio {
+      font-size: 0.9em;
+      margin: 10px 0;
+  }
+  .social-links a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #E9590F;
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+      color: #d1470a;
+  }
+  /* FOOTER SECTION */
+  footer{
+    position: relative;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+  /* Footer Brand */
+  h1 span{
+    font-family: "Baloo 2", sans-serif;
+    color: #E9590F;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: default;
+  }
+  .footer-brand{
+    display: flex;
+    align-content: center;
+    align-items: center;
+   
+    flex-direction: column;
+    flex: 0 0 auto; /* Keep its size fixed */
+   
+  
+    width: 320px;
+    height: 100px;
+  }
+  h1.bottom-title{
+    font-family: "Baloo 2", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: default;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+  .footer-container {
+    max-width: 100%;
+    margin: 0% 5px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start; /* Align brand and boxes in a row */
+    gap: 20px;
+    padding: 10px;
+    flex-wrap: wrap; /* Prevent overlap when screen is small */
+  }
+  
+  .footer-box{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 200px; /* Let boxes shrink or grow to fit */
+    min-width: 200px;
+    height: 250px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: left;
+    padding: 20px;
+  }
+  .footer-box .link-groups a i{
+  font-size: 1.7rem; /* Adjust size as needed */
+  }
+  .footer-box .link-groups a i:hover{
+    opacity: 0.9;
+  }
+  .footer-box h3{
+    margin-bottom: 35px;
+  }
+  .link-groups{
+    line-height: 2rem;
+    text-align: left;
+  }
+  .footer-content {
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    padding: 0 0.8rem 0 0.8rem;
+  }
+  .section-line{
+    border: solid #888 1px;
+    margin-bottom: 20px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .footer-link {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  .footer-label{
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .footer-link:hover {
+    color: #4299e1;
+  }
+  .footer-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #4299e1;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+  .footer-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .divider {
+    color: #888;
+    font-weight: bold;
+  }
+  .copyright {
+    font-size: 12px;
+    opacity: 0.7;
+    cursor: default;
+  }

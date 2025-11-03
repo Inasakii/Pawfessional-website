@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Design/Products.css">
+</head>
+<body>
+     <!-- HEADER -->
+    <header>
+        <div class="main-menu">
+            <div class="header-brand">
+                <a href="index.html" class="img-box">
+                    <img id="logo" src="../Assets/Images/PawLogo.png" alt="Pawfessional Logo">
+                </a>
+                <div class="title-box">
+                    <h1 class="title"><span>Paw</span>fessional</h1>
+                    <h4 class="subtext">Veterinary Clinic and Grooming Center</h4>
+                </div>
+            </div>
+            <div class="header-right">
+                <nav class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./About.html">About</a></li>
+                        <li><a href="/Main/Services.html">Services</a></li>
+                        <li><a href="./Products.html">Products</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Open navigation menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="upper-page">
+        <div class="upper-handler">
+            <div class="upper-content">
+                <h1 class="upper-title">Products</h1>
+                <p class="upper-label">“Everything your pet needs, all in one place.”</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-layout">
+            <!-- Filter Sidebar -->
+            <aside class="filter-block" aria-label="Product Filters">
+                <h3 class="fs-title">Filters</h3>
+                <!-- Pet Type -->
+                <div class="filter-section">
+                  <div class="filter-header">
+                    <h4>Pet Type</h4>
+                    <i class="fa-solid fa-plus"></i>
+                  </div>
+                  <div class="filter-content">
+                    <label><input type="checkbox" id="cat-checkbox" value="Cat">Cat</label>
+                    <label><input type="checkbox" id="dog-checkbox" value="Dog">Dog</label>
+                  </div>
+                </div>
+                <!-- Brand -->
+                <div class="filter-section" id="brand-filter">
+                  <div class="filter-header">
+                    <h4>Brand</h4>
+                    <i class="fa-solid fa-plus"></i>
+                  </div>
+                  <div class="filter-content">
+                    <!-- Dynamic content -->
+                  </div>
+                </div>
+                <!-- Category -->
+                <div class="filter-section" id="category-filter">
+                    <div class="filter-header">
+                      <h4>Category</h4>
+                      <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="filter-content">
+                      <label><input type="checkbox" value="Food" /> Food</label>
+                      <label><input type="checkbox" value="Vitamins" /> Vitamins</label>
+                      <label><input type="checkbox" value="Grooming" /> Grooming</label>
+                      <label><input type="checkbox" value="Milk" /> Milk</label>
+                      <label><input type="checkbox" value="Supplement" /> Supplement</label>
+                      <label><input type="checkbox" value="Disinfectant" /> Disinfectant</label>
+                      <label><input type="checkbox" value="Others" /> Others</label>
+                    </div>
+                </div>
+                <!-- Life Stage -->
+                <div class="filter-section" id="lifestage-filter">
+                  <div class="filter-header">
+                    <h4>Life Stage</h4>
+                    <i class="fa-solid fa-plus"></i>
+                  </div>
+                  <div class="filter-content">
+                    <label><input type="checkbox" value="All"> All</label>
+                    <label><input type="checkbox" value="adult cat"> Adult Cat</label>
+                    <label><input type="checkbox" value="kitten"> Kitten</label>
+                    <label><input type="checkbox" value="adult"> Adult Dog</label>
+                    <label><input type="checkbox" value="puppy"> Puppy</label>
+                  </div>
+                </div>
+                <!-- Clear Button -->
+                <div class="button-box">
+                  <button class="clr-btn">Clear Filter</button>
+                </div>
+            </aside>
+            
+            <!-- Products Area -->
+            <div class="products-area">
+                <section>
+                    <div class="sorting-container">
+                        <div class="sorting-title" id="category-title">All Products</div>
+                        <div class="results-info" id="results-info">Loading...</div>
+                        <div class="sort-by">
+                            <label for="sort-select">Sort by:</label>
+                            <select id="sort-select">
+                                <option value="relevancy">Relevancy</option>
+                                <option value="recent">Recent</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search for products...">
+                        <button id="searchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
+                        <div id="suggestions" class="suggestions-dropdown"></div>
+                    </div>
+                    <!-- Product Grid -->
+                    <div class="products-grid" id="products-list">
+                        <!-- Cards dynamically inserted here -->
+                    </div>
+                </section>
+                <div class="lower-page-controls">
+                    <!-- Pagination and Results per page controls are dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h1 class="bottom-title">
+                    <img id="logo-footer" src="../Assets/Images/PawLogo.png" alt="Pawfessional Logo">
+                    <span class="footer-title">Paw</span>fessional
+                </h1>
+            </div>
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <div class="link-groups">
+                    <ul>
+                        <li><a href="./index.html" class="footer-link">Home</a></li>
+                        <li><a href="/Main/Services.html" class="footer-link">Services</a></li>
+                        <li><a href="./Products.html" class="footer-link">Products</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3>Contacts</h3>
+                <div class="link-groups">
+                    <ul>
+                        <li class="footer-label">Call: 0965 071 3308</li>
+                        <li class="footer-label">Text: 0965 071 3308</li>
+                        <li class="footer-label">Norika Building, San Jose, Rodriguez, Rizal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3>Community</h3>
+                <div class="link-groups">
+                    <ul>
+                        <li><a href="./About.html" class="footer-link">About Us</a></li>
+                        <li><a href="./Developers.html" class="footer-link">Developers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3>Social Media</h3>
+                <div class="link-groups social-media">
+                    <a href="https://www.facebook.com/pawfessionalvetclinic" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                </div>
+            </div>   
+        </div>
+        <div class="section-line"></div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; 2025 Pawfessional. All Rights Reserved.
+            </div>
+            <div class="footer-links">
+                <a href="./Terms.html" class="footer-link">Terms & Conditions</a>
+                <span class="divider">|</span>
+                <a href="./Privacy.html" class="footer-link">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+   
+    <!-- Product Modal -->
+    <div id="productModal" class="modal-overlay">
+      <div class="modal-content animate__animated animate__fadeInUp">
+        <button id="closeModal" class="modal-close-btn" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-body">
+          <div class="modal-image-container">
+            <img id="modalImage" src="" alt="Product Image">
+          </div>
+          <div class="modal-info-container">
+            <div class="modal-info-main">
+              <h2 id="modalTitle">Product Title</h2>
+              <div class="modal-details-grid">
+                <p id="modalBrand"><strong>Brand:</strong></p>
+                <p id="modalCategory"><strong>Category:</strong></p>
+                <p id="modalLifeStage"><strong>Life Stage:</strong></p>
+                <p id="modalPetType"><strong>Pet Type:</strong></p>
+              </div>
+              <p id="modalDescription" class="modal-description">
+                Description will load here.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <p id="modalPrice">₱0.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="../Script/behavior.js"></script>
+    <script>
+      // Accordion script for filter sidebar
+      document.querySelectorAll(".filter-header").forEach(header => {
+        header.addEventListener("click", () => {
+          const section = header.parentElement;
+          const icon = header.querySelector("i");
+          
+          section.classList.toggle("active");
+
+          if (section.classList.contains("active")) {
+            icon.classList.replace("fa-plus", "fa-minus");
+          } else {
+            icon.classList.replace("fa-minus", "fa-plus");
+          }
+        });
+      });
+    </script>
+</html>

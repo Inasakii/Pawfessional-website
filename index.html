@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Design/Website.css">
+    <title>Pawfessional</title>
+    <style>
+        /* Fix for sticky header title color */
+        header.sticky .title,
+        header.sticky .title span {
+        color: white !important;
+        }
+    </style>
+</head>
+    <body>
+    <!-- Top Navigation Bar -->
+    <header>
+        <div class="main-menu">
+            <div class="header-brand">
+                <a href="/index.html" class="img-box">
+                    <img id="logo" src="/Assets/Images/PawLogo.png" alt="Pawfessional Logo">
+                </a>
+                    <div class="title-box">
+                        <h1 class="title"><span>Paw</span>fessional</h1>
+                        <h4 class="subtext">Veterinary Clinic</h4>
+                    </div>
+            </div>
+            <div class="header-right">
+                <nav class="nav-menu" id="mobile-nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="/About.html">About</a></li>
+                        <li><a href="/Main/Services.html">Services</a></li>
+                        <li><a href="/Products.html">Products</a></li>
+                        
+                    </ul>
+                </nav>
+                    <div class="header-actions desktop-header-actions">
+                        <a href="https://expo.dev/accounts/kennen/projects/vet-app/builds/a99ce221-2aff-4560-92bf-1ae8bf7ac62b" target="_blank" rel="noopener noreferrer" id="downloadBtn" class="header-action-button" aria-label="Download our Mobile App">
+                            <i class="fa-solid fa-download"></i>Download
+                        </a>
+                    </div>
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Open navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Upper Section / Hero -->
+        <section class="upper-page">
+            <div class="hero-background-shape"></div>
+            <div class="hero-content">
+                <p class="banner">
+                    Gentle Care for Your Furry Friends
+                </p>
+                <p class="sub-banner">
+                    Health. Comfort. Care.
+                </p>
+            </div>
+            <div class="hero-images">
+                <img class="hero-cat" src="/Assets/Images/cat-main-logo.png">
+                <img class="hero-dog" src="/Assets/Images/doggo.png" alt="Happy golden retriever">
+            </div>
+        </section>
+    
+        <!-- Middle Section -->
+        <section class="middle-container">
+            <div class="middle-img-wrapper">
+                <img src="/Assets/Images/goldog.jpg" alt="Golden retriever puppy in grass">
+            </div>
+            <div class="middle-content-wrapper">
+                <div class="middle-content-bg"></div>
+                    <div class="middle-content">
+                        <h1 class="middle-title">What We Do</h1>
+                        <p class="middle-label">
+                            We are dedicated to providing compassionate, high-quality care for pets of all shapes and sizes. From routine wellness check-ups to advanced medical treatments, our team of experienced veterinarians and staff work tirelessly to ensure your furry family members are happy, healthy, and thriving. Every pet that comes through our doors receives the attention, care, and love they deserve.
+                        </p>
+                    </div>
+            </div>
+        </section>
+    
+        <!-- Mid Card Section -->
+        <section class="mid-card">
+            <div class="widget-container">
+                <div class="wg-textbox">
+                    <h1 class="wg-title">Primary Care</h1>
+                    <p class="wg-label">"We provide complete veterinary care for your pets. Whether it's about their behavior, health, or overall well-being, we're here to help and guide you every step of the way."</p>
+                    <a href="/About.html" class="wg-link">Learn More...</a>
+                </div>
+                <div class="wg-handler">
+                    <img class="wg-picture" src="/Assets/Images/pgcover.png" alt="Vets with a happy client">
+                </div>
+            </div>
+        </section>
+    
+        <!-- Embedded Map -->
+        <section class="map-section">
+            <div class="section-header">
+                <h1>Conveniently Located</h1>
+                <h4>Locate Us & Visit Today</h4>
+            </div>
+            <div class="map-container">      
+                <iframe
+                    src="https://www.google.com/maps?q=14.731750,121.133583&hl=en&z=18&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    title="Clinic Location Map"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    
+        <!-- Events Section -->
+        <section class="events-section">
+          <div class="section-header orange-header">
+            <h2>Clinic Events</h2>
+            <p>Stay updated with our latest clinic activities and promotions</p>
+          </div>
+          <div class="events-grid">
+            <div id="todays-events" class="sub-section">
+              <h3>Today's Events</h3>
+              <ul class="event-list" id="todays-list"></ul>
+              <div id="todays-empty" class="empty-state" style="display: none;">No events today. Check back later!</div>
+            </div>
+            <div id="upcoming-events" class="sub-section">
+              <h3>Upcoming Events</h3>
+              <ul class="event-list" id="upcoming-list"></ul>
+              <div id="upcoming-empty" class="empty-state" style="display: none;">No upcoming events scheduled.</div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Download Section ( APK ) -->
+        <section id="downloadSection" class="download-section">
+            <h4 class="ds-label">"Download our App to Access our Events"</h4>
+            <p class="download-description">Available for Android devices.</p>
+            <div class="ds-box">
+                <a href="https://expo.dev/accounts/kennen/projects/vet-app/builds/399988ea-bab3-45e5-a81d-0dbd71d66d3b" target="_blank" rel="noopener noreferrer" class="gradient-button" id="mainButton">
+                    Get our App
+                </a>
+            </div>
+        </section>
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <h1 class="bottom-title">
+                        <img id="logo-footer" src="/Assets/Images/PawLogo.png" alt="Pawfessional Logo">
+                        <span class="footer-title">Paw</span>fessional
+                    </h1>
+                    <p class="footer-email">Direct Message in our official page: https://www.facebook.com/pawfessionalvetclinic</p>
+                </div>
+                <div class="footer-box">
+                    <h3>Quick Links</h3>
+                    <div class="link-groups">
+                        <ul>
+                            <li><a href="/Main/Services.html" class="footer-link">Services</a></li>
+                            <li><a href="/Products.html" class="footer-link">Products</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Contacts</h3>
+                    <div class="link-groups">
+                        <ul>
+                            <li class="footer-label">Call: 0965 071 3308</li>
+                            <li class="footer-label">Text: 0965 071 3308</li>
+                            <li class="footer-label">Norika Building, San Jose, Rodriguez, Rizal</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Community</h3>
+                    <div class="link-groups">
+                        <ul>
+                            <li><a href="/About.html" class="footer-link">About Us</a></li>
+                            <li><a href="/Developers.html" class="footer-link">Developers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Social Media</h3>
+                    <div class="link-groups social-media">
+                        <a href="https://www.facebook.com/pawfessionalvetclinic" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                    </div>
+                </div>   
+            </div>
+            <div class="section-line"></div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 Pawfessional. All Rights Reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="/Terms.html" class="footer-link">Terms & Conditions</a>
+                    <span class="divider">|</span>
+                    <a href="/Privacy.html" class="footer-link">Privacy Policy</a>
+                </div>
+            </div>
+        </footer>
+    
+        <button class="floating-btn" title="Scroll to top">↑</button>
+    
+        <script src="/Script/stickyFunction.js"></script>
+        <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+        <script src="/Script/announcement.js"></script>
+        <script src="/Script/responsive.js"></script>
+    </body>
+</html>
