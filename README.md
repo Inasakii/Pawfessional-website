@@ -10,4 +10,15 @@ Stack:
   -Database: MySQL inside Hostinger
   -Deployment: Hostinger (Web), Expo (Mobile), Electron Forge (Desktop)
 
+Objectives:
+  Simplify clinic operations with an all-in-one digital management system.
+  Allow Staff/Manager, booked for follow up appointments of users depends on service type.
+  Allow users to book, monitor appointments online, and check event's online.
+  Allow users to view the Products through the website and view event's announcements.
+  
+
+
+
+
+
   
