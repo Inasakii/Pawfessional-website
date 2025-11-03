@@ -5,4 +5,9 @@ Stack:
   -Desktop App (Admin/Staff Panel): Electron Forge
   -Mobile App (Users): React Native
 
+  -API(Backend): Hosted on Render, connected to GitHub
+  -Server-side Scripting: Node Express
+  -Database: MySQL inside Hostinger
+  -Deployment: Hostinger (Web), Expo (Mobile), Electron Forge (Desktop)
+
   
